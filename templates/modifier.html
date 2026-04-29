@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Modifier le contenu</h2>
+
+<form method="POST" action="{{ url_for('modifier_contenu', id=contenu.id) }}">
+    <div>
+        <label for="titre">Titre :</label>
+        <input type="text" id="titre" name="titre" value="{{ contenu.titre }}" required>
+    </div>
+    <div>
+        <label for="contenu">Contenu :</label>
+        <textarea id="contenu" name="contenu" rows="5" required>{{ contenu.contenu }}</textarea>
+    </div>
+    <button type="submit">Enregistrer</button>
+    <a href="{{ url_for('voir_contenu', id=contenu.id) }}">Annuler</a>
+</form>
+{% endblock %}

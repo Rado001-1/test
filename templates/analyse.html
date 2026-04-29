@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>{{ contenu['titre'] }}</h2>
+
+<p>🍽️ {{ contenu['categorie'] }}</p>
+<p>📅 {{ contenu['date'] }}</p>
+
+<p>👁 {{ contenu['vues'] }} | ❤️ {{ contenu['likes'] }}</p>
+
+<hr>
+
+<h3>Description</h3>
+<p>{{ contenu['contenu'] }}</p>
+
+<hr>
+
+<h3>Tags IA</h3>
+{% if tags %}
+<ul>
+    {% for tag in tags %}
+    <li>{{ tag }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<hr>
+
+<h3>Recommandations</h3>
+{% if similaires %}
+<ul>
+    {% for s in similaires %}
+    <li>
+        <a href="{{ url_for('voir_contenu', id=s.id) }}">
+            {{ s.titre }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<form action="{{ url_for('liker_contenu', id=contenu['id']) }}" method="POST">
+    <button type="submit">❤️ Liker</button>
+</form>
+
+<a href="{{ url_for('accueil') }}">Retour</a>
+
+{% endblock %}

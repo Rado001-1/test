@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+<h2 class="page-title">
+   <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24"><path fill="#df001e" d="M21 13H3V4h18zm-1-7c-1.68 0-3.04.98-3.21 2.23c-.64-.73-2.73-2.73-6.54-2.73c-4.67 0-6.75 3-6.75 3s2.08 3 6.75 3c3.81 0 5.9-2 6.54-2.73C16.96 10.02 18.32 11 20 11z" opacity="0.3"/><path fill="#df001e" d="m21.05 17.56l-17.97.94L3 17l17.98-.94zM21 19.48H3v1.5h18zM23 13V4c0-1.1-.9-2-2-2H3c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2m-2 0H3V4h18zm-1-7c-1.68 0-3.04.98-3.21 2.23c-.64-.73-2.73-2.73-6.54-2.73c-4.67 0-6.75 3-6.75 3s2.08 3 6.75 3c3.81 0 5.9-2 6.54-2.73C16.96 10.02 18.32 11 20 11z"/></svg>  Dashboard Gastronomique RESTOT
+</h2>
+
+<!-- KPI SECTION -->
+<div class="kpi-grid">
+
+    <div class="kpi-card">
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="#df001e" d="M3 21V3h3V1h2v2h8V1h2v2h3v18zm16-2V5H5v14zM9 17h1.5v-4q.65-.175 1.075-.712T12 11.075V7h-1v3.775h-.75V7h-1v3.775H8.5V7h-1v4.075q0 .675.425 1.213T9 13zm6 0h1.5V7q-1.25 0-2.125.875T13.5 10v3H15zM5 19V5z"/></svg> Recettes publiées
+        </div>
+        <div class="kpi-value">{{ stats['total_contenus'] }}</div>
+    </div>
+
+    <div class="kpi-card">
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="#060106" d="M16 20H8v-2h8zm-8-2H4v-2h4zm12 0h-4v-2h4zM4 16H2v-2h2zm10-6h-2v2h2zh2v4h-2v2h-4v-2H8v-4h2V8h4zm8 6h-2v-2h2zM2 14H0v-4h2zm22 0h-2v-4h2zM4 10H2V8h2zm18 0h-2V8h2zM8 8H4V6h4zm12 0h-4V6h4zm-4-2H8V4h8z"/></svg> Consultations des plats
+        </div>
+        <div class="kpi-value">{{ stats['total_vues'] }}</div>
+    </div>
+
+    <div class="kpi-card">
+        <div>
+            ❤️ Favoris culinaires
+        </div>
+        <div class="kpi-value">{{ stats['total_likes'] }}</div>
+    </div>
+
+    <div class="kpi-card">
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" stroke="#7a21dd" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 20v-8m0 0l3 3m-3-3l-3 3m-9-1l8-8l3 3l5-5"/></svg> Moyenne de popularité
+        </div>
+        <div class="kpi-value">{{ stats['moyenne_vues']|round(2) }}</div>
+    </div>
+
+    <div class="kpi-card">
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 128 128"><radialGradient id="SVG6bAUKdJt" cx="68.884" cy="124.296" r="70.587" gradientTransform="matrix(-1 -.00434 -.00713 1.6408 131.986 -79.345)" gradientUnits="userSpaceOnUse"><stop offset=".314" stop-color="#ff9800"/><stop offset=".662" stop-color="#ff6d00"/><stop offset=".972" stop-color="#f44336"/></radialGradient><path fill="url(#SVG6bAUKdJt)" d="M35.56 40.73c-.57 6.08-.97 16.84 2.62 21.42c0 0-1.69-11.82 13.46-26.65c6.1-5.97 7.51-14.09 5.38-20.18c-1.21-3.45-3.42-6.3-5.34-8.29c-1.12-1.17-.26-3.1 1.37-3.03c9.86.44 25.84 3.18 32.63 20.22c2.98 7.48 3.2 15.21 1.78 23.07c-.9 5.02-4.1 16.18 3.2 17.55c5.21.98 7.73-3.16 8.86-6.14c.47-1.24 2.1-1.55 2.98-.56c8.8 10.01 9.55 21.8 7.73 31.95c-3.52 19.62-23.39 33.9-43.13 33.9c-24.66 0-44.29-14.11-49.38-39.65c-2.05-10.31-1.01-30.71 14.89-45.11c1.18-1.08 3.11-.12 2.95 1.5"/><radialGradient id="SVG5R9TgbPb" cx="64.921" cy="54.062" r="73.86" gradientTransform="matrix(-.0101 .9999 .7525 .0076 26.154 -11.267)" gradientUnits="userSpaceOnUse"><stop offset=".214" stop-color="#fff176"/><stop offset=".328" stop-color="#fff27d"/><stop offset=".487" stop-color="#fff48f"/><stop offset=".672" stop-color="#fff7ad"/><stop offset=".793" stop-color="#fff9c4"/><stop offset=".822" stop-color="#fff8bd" stop-opacity="0.804"/><stop offset=".863" stop-color="#fff6ab" stop-opacity="0.529"/><stop offset=".91" stop-color="#fff38d" stop-opacity="0.209"/><stop offset=".941" stop-color="#fff176" stop-opacity="0"/></radialGradient><path fill="url(#SVG5R9TgbPb)" d="M76.11 77.42c-9.09-11.7-5.02-25.05-2.79-30.37c.3-.7-.5-1.36-1.13-.93c-3.91 2.66-11.92 8.92-15.65 17.73c-5.05 11.91-4.69 17.74-1.7 24.86c1.8 4.29-.29 5.2-1.34 5.36c-1.02.16-1.96-.52-2.71-1.23a16.1 16.1 0 0 1-4.44-7.6c-.16-.62-.97-.79-1.34-.28c-2.8 3.87-4.25 10.08-4.32 14.47C40.47 113 51.68 124 65.24 124c17.09 0 29.54-18.9 19.72-34.7c-2.85-4.6-5.53-7.61-8.85-11.88"/></svg> Taux d’engagement foodies
+        </div>
+        <div class="kpi-value">{{ stats['taux_engagement']|round(2) }}%</div>
+    </div>
+
+</div>
+
+<!-- TOP DISHES -->
+<div class="top-container">
+    <h3>
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 14 14"><path fill="#ffc735" fill-rule="evenodd" d="M5.15 1.145a.625.625 0 1 0-1.25 0v1.563a.625.625 0 1 0 1.25 0zm-2.907.538c.346 0 .625.28.625.625v1.563a.625.625 0 0 1-1.25 0V2.308c0-.345.28-.625.625-.625m4.563 0c.345 0 .625.28.625.625v1.563a.625.625 0 0 1-1.25 0V2.308c0-.345.28-.625.625-.625m5.658 1.526a1.455 1.455 0 0 0-1.362 1.97l-1.077.994c-.61-.268-1.348-.225-2.012.103a2.8 2.8 0 0 0-.666.543c-.846.929-.901 2.15-.349 2.866q.085.11.191.207a.5.5 0 1 1-.673.74a2.6 2.6 0 0 1-.309-.336c-.912-1.18-.698-2.944.4-4.15l.028-.03C4.562 5.501 1.862 6.23.67 8.608c-.918 1.834-.57 3.335-.252 4.101c.22.532.743.771 1.22.771h10.303a1.5 1.5 0 0 0 1.5-1.5v-.297c0-.676-.111-1.315-.463-1.89c-.268-.439-.657-.809-1.18-1.127a3.8 3.8 0 0 1-.826 1.456a.5.5 0 1 1-.74-.674c.666-.73.841-1.633.62-2.337l1.115-1.031l.034-.034q.218.073.462.074a1.455 1.455 0 1 0 0-2.91" clip-rule="evenodd"/></svg> Plats les plus savoureux
+    </h3>
+
+    {% for c in top %}
+    <div class="top-card">
+
+        <strong>
+            🍴 {{ c['titre'] }}
+        </strong>
+
+        <br>
+
+         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="#f0ad00" d="M20.16 12.73A6.27 6.27 0 0 0 19.09 3c-2.01-1.33-4.7-1.34-6.73-.03c-1.76 1.13-2.73 2.89-2.9 4.71c-.13 1.32-.63 2.55-1.55 3.47l-.03.03c-1.16 1.16-1.16 2.93-.07 4.01l.99.99a2.794 2.794 0 0 0 3.95 0c.97-.97 2.25-1.5 3.64-1.65c1.37-.15 2.71-.75 3.77-1.8m-13.9 7.13c.27.56.18 1.24-.29 1.7a1.49 1.49 0 0 1-2.55-.98a1.49 1.49 0 0 1-.98-2.55c.46-.46 1.15-.56 1.7-.29l2.48-2.43c.14.19.3.41.48.59l.99.99c.21.2.41.37.67.52z"/></svg>{{ c['vues'] }} dégustations |
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 48 48"><path fill="#f44336" d="M34 9c-4.2 0-7.9 2.1-10 5.4C21.9 11.1 18.2 9 14 9C7.4 9 2 14.4 2 21c0 11.9 22 24 22 24s22-12 22-24c0-6.6-5.4-12-12-12"/></svg> {{ c['likes'] }} coups de cœur
+
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
